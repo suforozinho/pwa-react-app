@@ -1,0 +1,30 @@
+.NavBar {
+  background: #FFF;
+  color: #1F1F1F;
+  position: fixed;
+  bottom: 0;
+  width: 91%;
+  display: flex;
+  padding: 17px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  justify-content: space-around;
+}
+
+.NavBar > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #a5a5a5;
+  text-decoration: none;
+}
+
+.NavBar > a > i {
+  font-size: 20px;
+}
+
+.NavBar > a.active {
+  color: #1f1f1f;
+}

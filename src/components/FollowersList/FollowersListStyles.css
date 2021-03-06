@@ -1,0 +1,62 @@
+.FollowersList {
+  background: #292929;
+  color: white;
+  height: 100%;
+}
+
+.FollowersList__header {
+  background: #1F1F1F;
+  display: flex;
+  padding: 20px;
+  padding-left: 9px;
+}
+
+.FollowersList__header__count {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  padding-right: 18px;
+}
+
+.FollowersList__list {
+  padding: 5px 0px;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.FollowersList__list__item {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 14px;
+  border-bottom: 1px solid #3f3f3f;
+  padding-bottom: 33px;
+  margin-top: 33px;
+}
+
+.FollowersList__list__item:last-child {
+  border: 0;
+}
+
+.FollowersList__list__item__user-info {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-left: 7px solid #FFCE00;
+}
+
+.FollowersList__list__item__user-info__name {
+  font-weight: 600;
+}
+
+.FollowersList__list__item__user-info__profile-picture {
+  width: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-right: 34px;
+}
+
+.FollowersList__list__item > .icon-right {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}

@@ -1,0 +1,72 @@
+.RepositoryList {
+  background: #292929;
+  color: white;
+  height: 100%;
+}
+
+.RepositoryList__header {
+  background: #1F1F1F;
+  display: flex;
+  padding: 20px;
+  padding-left: 9px;
+}
+
+.RepositoryList__header__count {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  padding-right: 18px;
+}
+
+.RepositoryList__list {
+  padding: 50px 0px;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.RepositoryList__item {
+  border-bottom: 1px solid #3f3f3f;
+  padding-bottom: 33px;
+  margin-bottom: 35px;
+}
+
+.RepositoryList__item:last-child {
+  border: 0;
+}
+
+.RepositoryList__item__title {
+  font-weight: 600;
+  font-size: 21px;
+  margin-bottom: 10px;
+  padding: 0 23px;
+  border-left: 7px solid #FFCE00;
+}
+
+.RepositoryList__item__desc {
+  color: rgb(173, 173, 173);
+  line-height: 26px;
+  margin-bottom: 10px;
+  padding: 0 30px;
+}
+
+.RepositoryList__item__stars-and-permission {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.star-count {
+  color: rgb(173, 173, 173);
+}
+
+.icon-star-empty {
+  color: #FFCE00;
+}
+
+.icon-lock-open {
+  color: #63BF1F;
+}
+
+.icon-lock {
+  color: #CC042A;
+}

@@ -1,0 +1,59 @@
+.Login {
+  background: #292929;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.Login__githubLogo {
+  margin-bottom: 40px;
+}
+
+.Login__githubLogo__photo {
+  width: 98px;
+  height: 97px;
+}
+
+.Login__usernameForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 93%;
+}
+
+.Login__usernameForm__input-and-span {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 13px;
+  display: flex;
+}
+
+.Login__usernameForm__usernameInput {
+  border: 0;
+  border-radius: 8px;
+  padding: 13px 13px;
+  font-size: 20px;
+  width: 100%;
+  outline: none;
+}
+
+.Login__usernameForm__spanError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #EB2D2D;
+}
+
+.Login__usernameForm__enterButton {
+  background: #ffce00;
+  border: 0;
+  border-radius: 8px;
+  color: #030202;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 13px 13px;
+  outline: none;
+}

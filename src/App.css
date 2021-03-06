@@ -1,0 +1,11 @@
+.containerWrapper {
+  display: flex;
+  justify-content: center;
+  height: 99.5vh;
+}
+
+.container {
+  max-width: 480px;
+  flex: 1;
+  height: 100%;
+}
