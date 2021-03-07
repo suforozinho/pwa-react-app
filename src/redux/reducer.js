@@ -19,27 +19,14 @@ export default function loginReducer(state = initalState, action) {
       }
       axios
       .get(
-        `https://api.github.com/users/${action.payload.username}`, 
-        {
-          auth: {
-            username: 'suforozinho',
-            password: 'c50f3b7383f77626df8d8ae8a15b5a37c9b934db' // REMOVE THIS LATER
-          }
-        }
+        `https://api.github.com/users/${action.payload.username}`
       )
       .then(response => {
         newState.currentUserInformation = response.data;
-        // props.history.push('/user');
     
         axios
         .get(
-          response.data.repos_url, 
-          {
-            auth: {
-              username: 'suforozinho',
-              password: 'c50f3b7383f77626df8d8ae8a15b5a37c9b934db' // REMOVE THIS LATER
-            }
-          }
+          response.data.repos_url
         )
         .then(response => {
           newState.repositoryList = response.data;
@@ -48,13 +35,7 @@ export default function loginReducer(state = initalState, action) {
     
         axios
         .get(
-          response.data.followers_url, 
-          {
-            auth: {
-              username: 'suforozinho',
-              password: 'c50f3b7383f77626df8d8ae8a15b5a37c9b934db' // REMOVE THIS LATER
-            }
-          }
+          response.data.followers_url
         )
         .then(response => {
           newState.followersList = response.data;
@@ -63,20 +44,12 @@ export default function loginReducer(state = initalState, action) {
     
         axios
         .get(
-          `https://api.github.com/users/${action.payload.username}/following`, 
-          {
-            auth: {
-              username: 'suforozinho',
-              password: 'c50f3b7383f77626df8d8ae8a15b5a37c9b934db' // REMOVE THIS LATER
-            }
-          }
+          `https://api.github.com/users/${action.payload.username}/following`
         )
         .then(response => {
           newState.followingList = response.data;
-          // console.log('followers', response.data);
         })
         .catch(err => console.log(err));
-        console.log(newState);
         setTimeout(() => action.payload.changeRouteTo('/user'), 500);
         return newState;
       })

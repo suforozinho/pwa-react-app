@@ -4,8 +4,6 @@ import './UserInfoStyles.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-// FIX PFP POSITIONING PROBLEM IN DIFFERENT SCREENS!!!
-
 function UserInfo(props) {
   return (
     <div className="UserInfo">
@@ -51,7 +49,6 @@ function UserInfo(props) {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     userInfo: state.currentUserInformation
   }
