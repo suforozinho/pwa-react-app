@@ -2,6 +2,7 @@ import EVA01 from '../../img/eva-profile-picture.png';
 import NavBar from '../NavBar/NavBar';
 import './UserInfoStyles.css';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // FIX PFP POSITIONING PROBLEM IN DIFFERENT SCREENS!!!
 
@@ -10,12 +11,12 @@ function UserInfo(props) {
     <div className="UserInfo">
       <div className="UserInfo__header">
         <div className="UserInfo__header__username">{props.userInfo.login}</div>
-        <div className="UserInfo__header__exit">Sair <i className="icon-logout"></i></div>
-      </div>
-      <div className="UserInfo__content">
         <div className="UserInfo__content__profile">
           <img src={props.userInfo.avatar_url} className="UserInfo__content__profile__picture" alt="EVA-01" />
         </div>
+        <Link to="/login" className="UserInfo__header__exit">Sair <i className="icon-logout"></i></Link>
+      </div>
+      <div className="UserInfo__content">
         <div className="UserInfo__content__header">
           <h1 className="UserInfo__content__header__name">{props.userInfo.name}</h1>
           <div className="UserInfo__content__header__extra-info">{props.userInfo.email}</div>

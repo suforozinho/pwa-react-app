@@ -10,13 +10,15 @@ function FollowerInfo(props) {
     <div className="UserInfo">
       <div className="UserInfo__header">
         <div className="UserInfo__header__back" onClick={() => props.backButton(true)}><i className="icon-left"></i></div>
-        <div className="UserInfo__header__username">{props.userInformation.login}</div>
+        <div className="UserInfo__header__username">
+          {props.userInformation.login}
+          <div className="UserInfo__content__profile FollowerInfo__content__profile" style={{display: props.returnToList ? 'none' : 'block'}}>
+            <img src={props.userInformation.avatar_url} className="UserInfo__content__profile__picture" alt="EVA-01" />
+          </div>
+        </div>
         <div className="UserInfo__header__exit" onClick={() => props.getWholeUserInfo(props.userInformation.login, props.history.push)}>Salvar <i className="icon-login"></i></div>
       </div>
-      <div className="UserInfo__content">
-        <div className="UserInfo__content__profile">
-          <img src={props.userInformation.avatar_url} className="UserInfo__content__profile__picture" alt="EVA-01" />
-        </div>
+      <div className="UserInfo__content FollowerInfo__content">
         <div className="UserInfo__content__header">
           <h1 className="UserInfo__content__header__name">{props.userInformation.name}</h1>
           <div className="UserInfo__content__header__extra-info">{props.userInformation.email}</div>

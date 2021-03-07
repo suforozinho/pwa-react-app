@@ -16,6 +16,9 @@
 
 .UserInfo__header__username {
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon-login {
@@ -25,21 +28,32 @@
 .UserInfo__content {
   display: flex;
   background: #292929;
-  height: 86%;
+  height: 69vh;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
+  padding-top: 33px;
 }
 
 .UserInfo__content__profile {
-  margin-top: -172px;
   display: flex;
   justify-content: center;
+  margin-top: 17px !important;
+  z-index: 1;
+  width: 143px;
+  height: 143px;
+  margin-right: 14px;
+}
+
+.FollowerInfo__content__profile {
+  margin-right: -27px;
 }
 
 .UserInfo__content__profile__picture {
   width: 143px;
   border-radius: 100%;
   border: 3px solid #fff;
+  z-index: 1;
 }
 
 .UserInfo__content__header {
@@ -99,4 +113,11 @@
   color: #a7a7a7;
   font-size: 18px;
   padding: 0 17px;
+}
+
+@media (min-width: 359px) and (max-width: 370px) {
+  .FollowerInfo__content {
+    height: 41vh !important;
+    padding-top: 189px !important;
+  }
 }

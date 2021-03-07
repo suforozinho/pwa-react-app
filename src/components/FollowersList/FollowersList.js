@@ -53,6 +53,7 @@ function FollowersList(props) {
         backButton={setReturnToList}
         style={{display: returnToList ? 'none' : 'block'}}
         getUser={props.getUser}
+        returnToList={returnToList}
       />
       <NavBar />
     </div>

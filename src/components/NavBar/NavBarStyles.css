@@ -9,6 +9,7 @@
   border-top-left-radius: 13px;
   border-top-right-radius: 13px;
   justify-content: space-around;
+  max-width: 447px;
 }
 
 .NavBar > a {
