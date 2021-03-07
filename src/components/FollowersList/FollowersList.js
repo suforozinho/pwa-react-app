@@ -5,11 +5,11 @@ import NavBar from '../NavBar/NavBar';
 import FollowerInfo from '../FollowerInfo/FollowerInfo';
 import EVA01 from '../../img/eva-profile-picture.png';
 import './FollowersListStyles.css';
+import { connect } from 'react-redux';
 
 function FollowersList(props) {
   const [followerInformation, setFollowerInformation] = useState({});
   const [returnToList, setReturnToList] = useState(true);
-  console.log('props de seguidores', props);
 
   function changeUser(user) {
     axios
@@ -29,14 +29,16 @@ function FollowersList(props) {
     .catch(err => console.log(err));
   }
 
+  const sourceList = props.followingOrFollowers === 'seguidores' ? props.followers : props.following
+
   return (
     <div className="FollowersList">
       <div className="FollowersList__header" style={{display: !returnToList ? 'none' : 'block'}}>
         <i className="icon-left"></i>
-        <div className="FollowersList__header__count">{props.follow.length} {props.followingOrFollowers}</div>
+        <div className="FollowersList__header__count">{sourceList.length} {props.followingOrFollowers}</div>
       </div>
       <div className="FollowersList__list" style={{display: !returnToList ? 'none' : 'block'}}>
-        {props.follow.map(follower => (
+        {sourceList.map(follower => (
           <div className="FollowersList__list__item" onClick={() => changeUser(follower.login)} key={follower.id}>
             <div className="FollowersList__list__item__user-info">
               <img src={follower.avatar_url} className="FollowersList__list__item__user-info__profile-picture" alt="user" />
@@ -57,4 +59,11 @@ function FollowersList(props) {
   )
 }
 
-export default withRouter(FollowersList);
+const mapStateToProps = state => {
+  return {
+    followers: state.followersList,
+    following: state.followingList
+  }
+}
+
+export default connect(mapStateToProps)(withRouter(FollowersList));

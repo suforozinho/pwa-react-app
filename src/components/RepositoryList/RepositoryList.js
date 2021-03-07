@@ -1,17 +1,16 @@
 import NavBar from '../NavBar/NavBar';
 import './RepositoryListStyles.css';
+import { connect } from 'react-redux';
 
 function RepositoryList(props) {
-  console.log('props de repositorio', props);
-
   return (
     <div className="RepositoryList">
       <div className="RepositoryList__header">
         <i className="icon-left"></i>
-        <div className="RepositoryList__header__count">{props.repositories.length} repositórios</div>
+        <div className="RepositoryList__header__count">{props.repositoryList.length} repositórios</div>
       </div>
       <div className="RepositoryList__list">
-        {props.repositories.map((repository) => (
+        {props.repositoryList.map((repository) => (
           <div className="RepositoryList__item" key={repository.id}>
             <div className="RepositoryList__item__title">{repository.name}</div>
             <div className="RepositoryList__item__desc">{repository.description}</div>
@@ -33,4 +32,12 @@ function RepositoryList(props) {
   )
 }
 
-export default RepositoryList;
+// export default RepositoryList;
+
+const mapStateToProps = state => {
+  return {
+    repositoryList: state.repositoryList
+  }
+}
+
+export default connect(mapStateToProps)(RepositoryList);

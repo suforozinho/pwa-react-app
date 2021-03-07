@@ -1,8 +1,9 @@
 import EVA01 from '../../img/eva-profile-picture.png';
 import NavBar from '../NavBar/NavBar';
 import './FollowerInfoStyles.css';
-
-// FIX PFP POSITIONING PROBLEM IN DIFFERENT SCREENS!!!
+import { connect } from 'react-redux';
+import { getWholeUserInfo } from '../../redux/action.js';
+import { withRouter } from 'react-router-dom';
 
 function FollowerInfo(props) {
   return (
@@ -10,7 +11,7 @@ function FollowerInfo(props) {
       <div className="UserInfo__header">
         <div className="UserInfo__header__back" onClick={() => props.backButton(true)}><i className="icon-left"></i></div>
         <div className="UserInfo__header__username">{props.userInformation.login}</div>
-        <div className="UserInfo__header__exit" onClick={() => props.getUser(props.userInformation.login)}>Salvar <i className="icon-login"></i></div>
+        <div className="UserInfo__header__exit" onClick={() => props.getWholeUserInfo(props.userInformation.login, props.history.push)}>Salvar <i className="icon-login"></i></div>
       </div>
       <div className="UserInfo__content">
         <div className="UserInfo__content__profile">
@@ -49,4 +50,4 @@ function FollowerInfo(props) {
   );
 }
 
-export default FollowerInfo;
+export default connect(null, { getWholeUserInfo })(withRouter(FollowerInfo));

@@ -2,6 +2,9 @@ import GithubLogo from '../../img/github-logo.png';
 import '../../font-icons/css/fontello.css'
 import './LoginStyles.css';
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { getWholeUserInfo } from '../../redux/action.js';
+import { withRouter } from 'react-router-dom';
 
 function Login(props) {
   const [searchUserText, setSearchUserText] = useState('');
@@ -13,7 +16,7 @@ function Login(props) {
       return;
     }
     setSomeError('');
-    props.getUser(username);
+    props.getWholeUserInfo(username, props.history.push);
   }
 
   return (
@@ -41,4 +44,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default connect(null, { getWholeUserInfo })(withRouter(Login));
